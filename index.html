@@ -1,0 +1,104 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>⚽ GOALSEER — Admin</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="admin.css">
+
+  <!-- Firebase (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <header class="admin-header">
+    <div class="brand">
+      <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden>
+        <circle cx="12" cy="12" r="10" fill="#3ee67b"></circle>
+        <path d="M9 7l3 2 3-2-1 3 2 2-3 .5L12 16l-1-3.5L8 12l2-2-1-3z" fill="#06210f"/>
+      </svg>
+      <div>
+        <div class="title">GOALSEER Admin</div>
+        <div class="subtitle">Manage Free Tips & VIP Predictions — realtime</div>
+      </div>
+    </div>
+    <div class="meta">Project: <b>goalseer-3b711</b></div>
+  </header>
+
+  <main class="admin-main">
+    <section class="card form-card">
+      <h2>🔥 Publish Daily Free Tips (3)</h2>
+      <form id="freeForm">
+        <div class="row">
+          <input id="free1" placeholder="Match 1 — e.g. Team A vs Team B" required>
+          <select id="free1Status"><option>PENDING</option><option>WIN</option><option>LOSS</option></select>
+        </div>
+        <div class="row">
+          <input id="free2" placeholder="Match 2" required>
+          <select id="free2Status"><option>PENDING</option><option>WIN</option><option>LOSS</option></select>
+        </div>
+        <div class="row">
+          <input id="free3" placeholder="Match 3" required>
+          <select id="free3Status"><option>PENDING</option><option>WIN</option><option>LOSS</option></select>
+        </div>
+        <div class="row actions">
+          <button type="submit" class="btn primary">Publish Free Tips</button>
+          <button type="button" id="clearFree" class="btn alt">Clear Inputs</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card form-card">
+      <h2>💎 Add VIP Tip</h2>
+      <form id="vipForm">
+        <div class="row">
+          <select id="vipLevel">
+            <option value="vip1">VIP 1</option>
+            <option value="vip2">VIP 2</option>
+            <option value="vip3">VIP 3</option>
+          </select>
+          <input id="vipMatch" placeholder="Team X vs Team Y" required>
+        </div>
+        <div class="row">
+          <input id="vipOdds" placeholder="Odds (optional) e.g. 1.85" />
+          <select id="vipStatus"><option>PENDING</option><option>WIN</option><option>LOSS</option></select>
+        </div>
+        <div class="row actions">
+          <button type="submit" class="btn primary">Add VIP Tip</button>
+          <button type="button" id="clearVip" class="btn alt">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card lists">
+      <div class="list-col">
+        <h3>Daily Free Tips (live)</h3>
+        <div id="freeList" class="list"></div>
+      </div>
+
+      <div class="list-col">
+        <h3>VIP Tips (live)</h3>
+        <div id="vipList" class="list"></div>
+      </div>
+    </section>
+
+    <section class="card help">
+      <h3>Notes</h3>
+      <ul>
+        <li>Admin panel has <b>no login</b> — keep this file private (or restrict hosting).</li>
+        <li>User app reads from <code>dailyFree</code> and <code>vipTips</code> collections.</li>
+        <li>Each document includes a <code>ts</code> timestamp for ordering.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    © <span id="year"></span> GOALSEER Admin — direct Firestore edits (no auth)
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

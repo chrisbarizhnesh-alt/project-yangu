@@ -1,0 +1,54 @@
+:root{
+  --bg:#041b0b; --card:#0f2d14; --accent:#3ee67b; --gold:#ffcc00; --muted:#cfeed5; --glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;}
+body{
+  background:
+    radial-gradient(900px 400px at 10% 10%, rgba(62,230,123,0.06), transparent 30%),
+    linear-gradient(180deg,#03220b 0%, #072912 60%);
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+}
+.admin-header{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:18px 22px; border-bottom:1px solid rgba(255,255,255,0.04);
+  background:linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.15));
+}
+.brand{display:flex; gap:12px; align-items:center}
+.title{font-weight:800; color:var(--accent); font-size:1.1rem}
+.subtitle{font-size:.85rem; opacity:.9}
+.meta{font-size:.85rem; color:#bfeac1}
+
+.admin-main{max-width:1100px; margin:22px auto; padding:12px; display:grid; gap:18px}
+.card{background:var(--card); border-radius:12px; padding:14px; box-shadow:0 10px 30px rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.03)}
+.form-card h2{margin:0 0 10px; color:var(--gold)}
+.row{display:flex; gap:10px; margin-bottom:10px; align-items:center}
+.row input, .row select{flex:1; padding:10px; border-radius:8px; border:none; background:var(--glass); color:var(--muted)}
+.row select{max-width:180px}
+.actions{justify-content:flex-end}
+.btn{padding:10px 14px; border-radius:10px; border:none; cursor:pointer; font-weight:700}
+.btn.primary{background:linear-gradient(180deg,var(--accent),#1bd08a); color:#05210e}
+.btn.alt{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted)}
+
+.lists{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.list-col h3{margin:0 0 8px; color:var(--gold)}
+.list{display:flex; flex-direction:column; gap:8px; max-height:420px; overflow:auto; padding-right:6px}
+.tip{display:flex; align-items:center; justify-content:space-between; padding:10px; border-radius:8px; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.02)}
+.tip .meta{font-size:.95rem; opacity:.95}
+.badge{padding:6px 10px; border-radius:999px; font-weight:800}
+.WIN{background:#2bd46f; color:#05210e}
+.LOSS{background:#ff6b6b}
+.PENDING{background:#ffd24d; color:#05210e}
+
+.select-status { padding:6px 8px; border-radius:8px; background:rgba(255,255,255,0.06); color:var(--muted); border:none; }
+
+.help ul{margin:0; padding-left:18px}
+.admin-footer{text-align:center; padding:18px; opacity:.8; font-size:.9rem}
+
+/* responsive */
+@media (max-width:900px){
+  .lists{grid-template-columns:1fr}
+  .row{flex-direction:column}
+  .row select{width:100%}
+}
