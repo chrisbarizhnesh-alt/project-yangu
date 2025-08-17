@@ -101,26 +101,28 @@
 
   <script src="admin.js"></script>
 </body> 
+<script type="module">
   // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyChSY98ZLBYuyIKqzXqQxrJsO_X5nQA348",
-  authDomain: "goalseer-3b711.firebaseapp.com",
-  projectId: "goalseer-3b711",
-  storageBucket: "goalseer-3b711.firebasestorage.app",
-  messagingSenderId: "738240427316",
-  appId: "1:738240427316:web:b67cf3b5248665e2dc2161",
-  measurementId: "G-0HKV6Y5QFG"
-};
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyChSY98ZLBYuyIKqzXqQxrJsO_X5nQA348",
+    authDomain: "goalseer-3b711.firebaseapp.com",
+    projectId: "goalseer-3b711",
+    storageBucket: "goalseer-3b711.firebasestorage.app",
+    messagingSenderId: "738240427316",
+    appId: "1:738240427316:web:b67cf3b5248665e2dc2161",
+    measurementId: "G-0HKV6Y5QFG"
+  };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </html>
+
